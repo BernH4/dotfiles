@@ -1,0 +1,10 @@
+keycode 17 = 8 bar
+keycode 18 = 9 backslash
+keycode 34 = braceleft braceright
+keycode 47 = parenleft parenright
+keycode 48 = bracketleft bracketright
+
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
