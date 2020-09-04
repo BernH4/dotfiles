@@ -1,0 +1,21 @@
+#My custom aliases
+
+#alias theme="bash -c  \"$(wget -qO- https://git.io/vQgMr)\""
+
+# Start programms
+alias python="python3"
+alias vim="nvim"
+alias s="nvim -S"
+
+# alias system hotkeys
+alias ..="cd .."
+
+#XEV " ' to much
+#alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
+
+# Managing dotfiles with bare repo ( use config instead of git )
+# https://youtu.be/tBoLDpTWVOM?t=557 / press gx
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+# Ruby
+alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/knights_travails'
