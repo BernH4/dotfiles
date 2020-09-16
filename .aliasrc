@@ -16,6 +16,7 @@ alias ..="cd .."
 # Managing dotfiles with bare repo ( use config instead of git )
 # https://youtu.be/tBoLDpTWVOM?t=557 / press gx
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias configupdate='config add -u && config commit -m "backup" && config push'
 
 # Ruby
 alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing'
