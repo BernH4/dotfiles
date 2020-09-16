@@ -1,0 +1,3 @@
+xrandr --newmode "2560x1440_144.00"  808.75  2560 2792 3072 3584  1440 1443 1448 1568 -hsync +vsync
+xrandr --addmode Virtual1 2560x1440_144.00
+xrandr --output Virtual1 --mode 2560x1440_144.00

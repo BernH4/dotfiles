@@ -18,4 +18,4 @@ alias ..="cd .."
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # Ruby
-alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/knights_travails'
+alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing'

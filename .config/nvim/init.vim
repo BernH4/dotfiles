@@ -1,6 +1,6 @@
 let mapleader = ' '
 " Use system clipboard
-"set clipboard+=unnamedplus
+set clipboard+=unnamedplus
 
 "Custom Shortcuts
 command! Reload execute "source ~/.config/nvim/init.vim"
@@ -20,8 +20,10 @@ map <leader>I :setlocal noautoindent<CR>
 map <leader>c :noh<CR>
 " Save with ZS
 nnoremap ZS :wa<cr>
+" Save and close all
+nnoremap ZA :wqa<cr>
 "Autoreload on change
-set autoread | au CursorHold * checktime | call feedkeys("lh")
+" set autoread | au CursorHold * checktime | call feedkeys("lh")
 
 " Autocompletion ui
 set wildmode=longest,list,full
@@ -39,6 +41,13 @@ nnoremap <C-h> <C-w><C-h>
 "Set new split windows to bottom right
 set splitbelow
 set splitright
+
+" Enable true color
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 syntax on
 " set hidden
@@ -66,6 +75,7 @@ abbr cl console.log(
 
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'habamax/vim-gruvbit'
 Plug 'turbio/bracey.vim'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'preservim/nerdtree'
@@ -112,14 +122,9 @@ map <leader>a :ALEToggle<CR>
 " Disable ALE auto highlights
 let g:ale_set_highlights = 0 
 
+source $HOME/.config/nvim/plug-config/vim-airline.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
 
-" Enable true color
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
 
 " CTRL+Arrows to resize splits
 nnoremap <C-left> :vertical resize -5<cr>
