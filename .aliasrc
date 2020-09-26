@@ -1,0 +1,36 @@
+alias r="clear; rspec"
+#My custom aliases
+#reload .inputrc C-x C-r
+
+#alias theme="bash -c  \"$(wget -qO- https://git.io/vQgMr)\""
+
+# Start programms
+alias python="python3"
+alias vim="nvim"
+alias s="nvim -S"
+alias al="nvim ~/.aliasrc"
+alias tmux='tmux -2 -f /home/pi/.config/tmux/tmux.conf'
+
+#production
+alias bs="systemctl status yt-telegram.service"
+alias br="sudo systemctl restart yt-telegram.service"
+alias bj="journalctl -r -u yt-telegram.service"
+alias bl="tail -n 55 ~/Downloads/music/log.txt"
+alias bdl="tail -n 55 ~/Downloads/music/debuglog.txt"
+alias bse="sudo -E nvim /lib/systemd/system/yt-telegram.service"
+
+alias woff="sudo ifconfig wlan0 down"
+
+# alias system hotkeys
+alias ..="cd .."
+
+#XEV " ' to much
+#alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
+
+# Managing dotfiles with bare repo ( use config instead of git )
+# https://youtu.be/tBoLDpTWVOM?t=557 / press gx
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y')" && config push'
+
+# Ruby
+alias rubyf='cd ~/projects/ruby/yt-telegram'
