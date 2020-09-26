@@ -21,5 +21,10 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y')" && config push'
 
 # Ruby
-alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing'
+alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing/connect-four'
 alias r="clear; rspec"
+
+#for aliases containing private information
+if [ -f ~/.secretrc ]; then
+    . ~/.secretrc
+fi
