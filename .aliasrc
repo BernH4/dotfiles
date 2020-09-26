@@ -1,4 +1,5 @@
 #My custom aliases
+#reload .inputrc C-x C-r
 
 #alias theme="bash -c  \"$(wget -qO- https://git.io/vQgMr)\""
 
@@ -6,6 +7,7 @@
 alias python="python3"
 alias vim="nvim"
 alias s="nvim -S"
+alias al="nvim ~/.aliasrc"
 
 # alias system hotkeys
 alias ..="cd .."
@@ -20,3 +22,4 @@ alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y'
 
 # Ruby
 alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing'
+alias r="clear; rspec"
