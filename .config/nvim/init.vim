@@ -22,8 +22,6 @@ map <leader>c :noh<CR>
 nnoremap ZS :wa<cr>
 " Save and close all
 nnoremap ZA :wqa<cr>
-"Autoreload on change
-" set autoread | au CursorHold * checktime | call feedkeys("lh")
 
 " Autocompletion ui
 set wildmode=longest,list,full
@@ -52,6 +50,8 @@ endif
 syntax on
 " set hidden
 set noerrorbells
+"https://stackoverflow.com/questions/36724209/disable-beep-of-linux-bash-on-windows-10
+set visualbell
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 "Move by shiftwidth ( only indent 2 4 6 .. possible not 5 to 7)
@@ -83,7 +83,11 @@ Plug 'wakatime/vim-wakatime'
 Plug 'vim-airline/vim-airline' 
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-startify'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'will133/vim-dirdiff'
 " Git
 Plug 'tpope/vim-fugitive'
 "Ruby Plugins
@@ -117,14 +121,15 @@ let g:airline#extensions#ale#enabled = 1
 "Show left error collumn always for smooth start
 set signcolumn=yes
 "Set hotkey to ALEFix file with rubocop
-map <leader>f :ALEFix rubocop<CR>
-map <leader>a :ALEToggle<CR>
+map <leader>af :ALEFix rubocop<CR>
+map <leader>at :ALEToggle<CR>
 " Disable ALE auto highlights
 let g:ale_set_highlights = 0 
 
+"use gf : Go File
 source $HOME/.config/nvim/plug-config/vim-airline.vim
 source $HOME/.config/nvim/plug-config/start-screen.vim
-
+source $HOME/.config/nvim/plug-config/vim-fugitive.vim
 
 " CTRL+Arrows to resize splits
 nnoremap <C-left> :vertical resize -5<cr>
