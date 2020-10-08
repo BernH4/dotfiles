@@ -7,7 +7,6 @@ alias r="clear; rspec"
 # Start programms
 alias python="python3"
 alias vim="nvim"
-alias s="nvim -S"
 alias al="nvim ~/.aliasrc"
 alias tmux='tmux -2 -f /home/pi/.config/tmux/tmux.conf'
 

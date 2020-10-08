@@ -134,3 +134,5 @@ export EDITOR=$VISUAL
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+#fix backspace when ssh from main pc
+export TERM=ansi
