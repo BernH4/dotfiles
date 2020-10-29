@@ -9,7 +9,6 @@ alias vim="nvim"
 alias s="nvim -S"
 alias al="nvim ~/.aliasrc"
 
-alias sshs="ssh -i ~/projects/linuxupskillchallenge/linuxupskillchallenge.pem ubuntu@ec2-18-185-61-6.eu-central-1.compute.amazonaws.com"
 # alias system hotkeys
 alias ..="cd .."
 alias tmuxscp="scp -r pi@192.168.178.145:/home/pi/.tmux/resurrect /home/bernh4/.tmux/resurrect"
