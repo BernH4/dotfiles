@@ -1,0 +1,17 @@
+[user]
+	email = bernhard.steidl14@gmail.com
+	name = BernH4
+[color]
+	ui = auto
+[merge]
+	tool = vimdiff3
+[mergetool]
+	path = nvim
+[diff]
+	tool = vimdiff3
+[difftool "vimdiff3"]
+	path = nvim
+[mergetool "vimdiff3"]
+	path = nvim
+[core]
+	editor = nvim
