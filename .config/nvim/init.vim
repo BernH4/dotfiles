@@ -1,3 +1,4 @@
+"RASPBERRY PI CONFIG
 let mapleader = ' '
 " Use system clipboard
 set clipboard+=unnamedplus
