@@ -12,6 +12,7 @@ alias al="nvim ~/.aliasrc"
 # alias system hotkeys
 alias ..="cd .."
 alias tmuxscp="scp -r pi@192.168.178.145:/home/pi/.tmux/resurrect /home/bernh4/.tmux/resurrect"
+alias spo="sudo poweroff"
 
 #XEV " ' to much
 #alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
@@ -20,10 +21,12 @@ alias tmuxscp="scp -r pi@192.168.178.145:/home/pi/.tmux/resurrect /home/bernh4/.
 # https://youtu.be/tBoLDpTWVOM?t=557 / press gx
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y')" && config push'
+alias configdiff='config difftool -t vimdiff3 master raspberrypi'
 
 # Ruby
 alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing/connect-four'
 alias r="clear; rspec"
+alias picd="cd /home/bernh4/projects/arbeit/vergleich_PIC_Dyn"
 
 # my_scp() {
 #   scp -r myServer:"$1"

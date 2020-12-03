@@ -22,6 +22,8 @@ map <leader>c :noh<CR>
 nnoremap ZS :wa<cr>
 " Save and close all
 nnoremap ZA :wqa<cr>
+" Just close
+nnoremap ZQ :q!<cr>
 
 " Autocompletion ui
 set wildmode=longest,list,full
@@ -88,6 +90,7 @@ Plug 'mhinz/vim-startify'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'will133/vim-dirdiff'
+Plug 'vimwiki/vimwiki'
 " Git
 Plug 'tpope/vim-fugitive'
 "Ruby Plugins
