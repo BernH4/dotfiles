@@ -28,6 +28,9 @@ alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_
 alias r="clear; rspec"
 alias picd="cd /home/bernh4/projects/arbeit/vergleich_PIC_Dyn"
 
+# Convenience
+alias pb="pastebinit -b paste.debian.net"
+
 # my_scp() {
 #   scp -r myServer:"$1"
 # }

@@ -139,3 +139,6 @@ nnoremap <C-left> :vertical resize -5<cr>
 nnoremap <C-down> :resize +5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-right> :vertical resize +5<cr>
+
+"nnoremap <leader>l gg/control 30[0-9][0-9][0-9] 10<Enter>nf";;8ldt"
+"nnoremap <leader>r gg/control 31[0-9][0-9][0-9] 10<Enter>nf";;8ldt"
