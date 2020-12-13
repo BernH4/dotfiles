@@ -62,6 +62,7 @@ set expandtab
 set smartindent
 set rnu "relative line numbers
 set nowrap
+set ignorecase
 set smartcase
 set noswapfile
 set nobackup
