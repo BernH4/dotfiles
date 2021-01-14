@@ -72,8 +72,15 @@ set incsearch
 set formatoptions-=r
 "set termguicolors
 
-"Shortcuts
-abbr cl console.log(
+"Abbreviations
+iabbrev cl console.log(
+iabbrev <expr> ddd strftime('%c')
+iabbrev bpry binding.pry
+
+" var -> #{var}
+let @s = 'hea}^[Bi#+<80>kb{^[A ^['
+" Align paragraph
+noremap <leader>a =ip
 
 call plug#begin('~/local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
@@ -140,5 +147,8 @@ nnoremap <C-down> :resize +5<cr>
 nnoremap <C-up> :resize -5<cr>
 nnoremap <C-right> :vertical resize +5<cr>
 
-"nnoremap <leader>l gg/control 30[0-9][0-9][0-9] 10<Enter>nf";;8ldt"
-"nnoremap <leader>r gg/control 31[0-9][0-9][0-9] 10<Enter>nf";;8ldt"
+nnoremap <leader>l gg/control 30[0-9][0-9][0-9] 10<Enter>n:echo 'LINKS'<Enter>"
+nnoremap <leader>r gg/control 31[0-9][0-9][0-9] 10<Enter>n:echo 'RECHTS'<Enter>"
+nnoremap <leader>o gg/control 30[0-9][0-9][0-9] 1[0-9][0-9] <Enter>n:echo 'OBEN'<Enter>"
+" nnoremap <leader>u gg/control 31[0-9][0-9][0-9] 2[0-9][0-9][0-9] <Enter>n:echo 'UNTEN'<Enter>"
+nnoremap <leader>u gg/control 30[0-9][0-9][0-9] 2[0-9][0-9][0-9] <Enter>n:echo 'UNTEN'<Enter>"

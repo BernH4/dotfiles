@@ -8,14 +8,22 @@ alias python="python3"
 alias vim="nvim"
 alias s="nvim -S"
 alias al="nvim ~/.aliasrc"
+alias ac="arduino-cli"
 
 # alias system hotkeys
 alias ..="cd .."
 alias tmuxscp="scp -r pi@192.168.178.145:/home/pi/.tmux/resurrect /home/bernh4/.tmux/resurrect"
 alias spo="sudo poweroff"
 
+#Arduino
+alias accu="echo 'compiling and uploading..' && ac compile && arduino-cli upload -p /dev/ttyUSB0"
+alias sm="stty -F /dev/ttyUSB0 raw 9600 && cat /dev/ttyUSB0"
+alias serialmonitor="stty -F /dev/ttyUSB0 raw 9600 && cat /dev/ttyUSB0"
 #XEV " ' to much
 #alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
+#
+# Arbeit
+alias mntx="sshfs -o dir_cache=no sicx:/usr/sicx/mount/os1/pic/plm/PICTURE /home/bernh4/sicx/ -C"
 
 # Managing dotfiles with bare repo ( use config instead of git )
 # https://youtu.be/tBoLDpTWVOM?t=557 / press gx
@@ -29,9 +37,8 @@ alias r="clear; rspec"
 alias picd="cd /home/bernh4/projects/arbeit/vergleich_PIC_Dyn"
 
 # Convenience
-alias pb="pastebinit -b paste.debian.net"
-
-# my_scp() {
-#   scp -r myServer:"$1"
-# }
-
+# alias pb="pastebinit -b paste.debian.net"
+alias ix="curl -F 'f:1=<-' ix.io"
+alias ipscan="nmap -sn 192.168.178.0/24"
+alias m="ruby main.rb"
+alias sb="source ~/.bashrc"
