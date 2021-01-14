@@ -20,8 +20,18 @@ alias bse="sudo -E nvim /lib/systemd/system/yt-telegram.service"
 
 alias woff="sudo ifconfig wlan0 down"
 
+#Arduino
+alias acompile="arduino-cli compile -b arduino:avr:uno"
+alias aupload="arduino-cli upload -b arduino:avr:uno -p /dev/ttyACM0"
+alias aattach="arduino-cli board attach serial:///dev/ttyACM0 -v"
+alias acu="arduino-cli compile --upload"
+#alias acu="arduino-cli compile -b arduino:avr:uno && arduino-cli upload -b arduino:avr:uno -p /dev/ttyACM0"
+
 # alias system hotkeys
 alias ..="cd .."
+
+# Misc
+alias ipscan="nmap -sn 192.168.178.0/24"
 
 #XEV " ' to much
 #alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
@@ -33,3 +43,8 @@ alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y'
 
 # Ruby
 alias rubyf='cd ~/projects/ruby/yt-telegram'
+
+# Convenience
+alias fzfupdate="cd ~/.fzf && git pull | grep -q -v 'Already up to date.' && ./install; cd -"
+alias m="rm before.txt after.txt && ruby main.rb"
+alias sb="source ~/.bashrc"

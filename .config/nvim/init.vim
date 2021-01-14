@@ -1,4 +1,3 @@
-"I want this change from the raspberrypi branch to the master branch
 let mapleader = ' '
 " Use system clipboard
 set clipboard+=unnamedplus
@@ -56,12 +55,13 @@ set noerrorbells
 "https://stackoverflow.com/questions/36724209/disable-beep-of-linux-bash-on-windows-10
 set visualbell
 set tabstop=2 softtabstop=2
-set shiftwidth=2
 "Move by shiftwidth ( only indent 2 4 6 .. possible not 5 to 7)
+set shiftwidth=2
 set shiftround
 set expandtab
 set smartindent
 set rnu "relative line numbers
+" set nu "show current line number left
 set nowrap
 set ignorecase
 set smartcase
@@ -73,12 +73,15 @@ set incsearch
 "No autocomment when hitting enter
 set formatoptions-=r
 "set termguicolors
+"NEW
+" set exrc
+set scrolloff=8
 
 "Shortcuts
 abbr cl console.log(
 
 call plug#begin('~/local/share/nvim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'habamax/vim-gruvbit'
 Plug 'turbio/bracey.vim'
 Plug 'neoclide/vim-jsx-improve'
@@ -93,6 +96,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'will133/vim-dirdiff'
 Plug 'vimwiki/vimwiki'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Git
 Plug 'tpope/vim-fugitive'
 "Ruby Plugins
