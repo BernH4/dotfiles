@@ -1,0 +1,25 @@
+
+Host *
+    IgnoreUnknown UseKeychain
+    UseKeychain yes
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/arch-fujitsu
+
+Host aws
+  HostName ec2-3-64-53-96.eu-central-1.compute.amazonaws.com
+  User ubuntu
+  IdentityFile ~/.ssh/mainaws.pem
+
+Host pi
+	HostName 192.168.178.143
+	User pi
+	
+Host phone
+	HostName 192.168.178.144
+	User x
+	Port 8022
+	
+Host arch
+	HostName 192.168.178.146
+	User bernh4
+
