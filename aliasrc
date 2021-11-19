@@ -1,0 +1,86 @@
+#My custom aliases
+#reload .inputrc C-x C-r
+
+#alias theme="bash -c  \"$(wget -qO- https://git.io/vQgMr)\""
+
+# Start programms
+alias python="python3"
+alias vim="nvim"
+alias vi="nvim"
+alias s="nvim -S"
+alias al="nvim ~/.aliasrc"
+alias ac="arduino-cli"
+# alias tmux='tmux -2 -f /home/pi/.config/tmux/tmux.conf'
+alias cdl="cd `ls -t | head -n 1`"
+
+# alias system hotkeys
+alias ..="cd .."
+#alias tmuxscp="scp -r pi@192.168.178.145:/home/pi/.tmux/resurrect /home/bernh4/.tmux/resurrect"
+alias spo="sudo poweroff"
+
+#Pacman
+alias pmi="sudo pacman -S"
+alias pms="pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias pmr="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns"
+
+#XEV " ' to much
+# alias fxev = xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf Ä%-3s %s\n", $5, $8 }'
+
+
+# Arbeit
+alias mntx="sshfs -o dir_cache=no sicx:/usr/sicx/mount/os1/pic/plm/PICTURE /home/bernh4/sicx/ -C"
+
+# Managing dotfiles with bare repo ( use config instead of git )
+# https://youtu.be/tBoLDpTWVOM?t=557 / press gx
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias configupdate='config add -u && config commit -m "backup $(date '+%d-%h-%Y')" && config push'
+alias configdiff='config difftool -t vimdiff3 master raspberrypi'
+
+# Ruby
+#alias rubyf='cd /home/bernh4/projects/the_odin_project/ruby/ruby_exercises/ruby_testing/connect-four'
+alias r="clear; rspec"
+#alias picd="cd /home/bernh4/projects/arbeit/vergleich_PIC_Dyn"
+
+# Arduino
+if [ "$HOSTNAME" = raspberrypi ]; then
+    alias zsub="docker exec -it mosquitto mosquitto_sub -t 'zisterne/#' -v - u bernh4 -P $mqtt_passwd"
+    alias hsub="docker exec -it mosquitto mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    alias asub="docker exec -it mosquitto mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+else
+    alias zsub="mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
+    alias hsub="mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    alias asub="mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+fi
+
+#Platformio
+alias pr="platformio run"
+alias pu="platformio run -t upload"
+#Compile and place on Webserver ready to be picked up by esp
+alias phu="platformio run && ./upload_to_ota_server.sh"
+alias sm="platformio device monitor"
+
+# Convenience
+# alias pb="pastebinit -b paste.debian.net"
+alias o="xdg-open"
+alias ix="curl -F 'f:1=<-' ix.io"
+alias ipscan="nmap -sn 192.168.178.0/24"
+alias m="ruby main.rb"
+alias srcb="source ~/.bashrc"
+alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias sleepon="echo unmasking && sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+alias sleepoff="echo masking && sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+alias dishole="curl -v http://192.168.178.143:81/admin/api.php?disable=300\&auth=$pihole_hash"
+
+alias nk="normal_keyboard.sh"
+alias ck="coding_keyboard.sh"
+
+# some more ls aliases
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+
+
+if [ "$HOSTNAME" = arch-fujitsu ]; then
+  alias cdsc='cd ~/Schule/Chemie'
+fi

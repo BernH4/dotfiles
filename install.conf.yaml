@@ -10,12 +10,15 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
+    ~/.aliasrc:
     ~/.gitconfig: gitconfig
+    ~/.pryrc:
     ~/.ssh/config:
         path: ssh/config
         create: true
     ~/.Xmodmap: Xmodmap
     ~/.Xresources: Xresources
+    ~/.Xresources.d:
     ~/.xinitrc: xinitrc
     ~/git_needed.txt: git_needed.txt
     ~/.config/bspwm:
