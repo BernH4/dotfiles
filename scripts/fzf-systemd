@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+#todo install ccze
+# configure hotkeys restart status
+systemctl list-unit-files --no-legend --type=service \
+  | awk '{print $1}' \
+  | fzf --multi --ansi --preview="SYSTEMD_COLORS=1 systemctl -n 30 status --no-pager {}" \
+        --preview-window up,40 \
+        --bind "alt-j:execute(journalctl -u {} | less --chop-long-lines)"
+  # | xargs journalctl -u 
