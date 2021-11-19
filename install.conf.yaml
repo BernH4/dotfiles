@@ -27,6 +27,7 @@
     ~/.config/rofi:
     ~/.config/sxhkd:
     ~/.config/tmux:
+    ~/scripts:
     ~/ola/:
       glob: true
       path: ola/*
