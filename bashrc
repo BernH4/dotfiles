@@ -73,13 +73,17 @@ export PATH="$HOME/.local/bin:$PATH"
 # set -o vi
 
 #script for ssh-agent to only enter ssh passwords once each session
-eval $(keychain --eval --quiet --noask ~/.ssh/arch-fujitsu)
-echo "todo: install dmenu"
-echo "todo: install inotify"
-echo "todo: install lesspipe"
-echo "todo:  teams"
-echo "todo:  unlock screen"
-bluetooth
+# eval $(keychain --eval --quiet --noask ~/.ssh/arch-fujitsu)
+# echo "todo: install dmenu"
+# echo "todo: install inotify"
+# echo "todo: install lesspipe"
+# echo "todo:  teams"
+# echo "todo:  unlock screen"
+# bluetooth
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+setxkbmap -option caps:escape
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

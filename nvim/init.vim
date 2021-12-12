@@ -183,6 +183,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
+" autocmd FileType markdown nnoremap <buffer> <C-C> !pandoc %  -o %:r.pdf
+nnoremap <buffer><nowait><silent> <F9> :<c-u>silent call system('pandoc '.expand('%:p:S').' -o '.expand('%:p:r:S').'.pdf')<cr>
+
 colorscheme gruvbox
 set background=dark
 

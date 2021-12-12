@@ -1,8 +1,8 @@
-- defaults:
-    link:
-      relink: true
-      create: true
-      force: true
+# - defaults:
+#     link:
+#       relink: true
+#       create: true
+#       force: true
 
 - clean: ['~']
 
@@ -28,10 +28,10 @@
     ~/.config/sxhkd:
     ~/.config/tmux:
     ~/scripts:
-    ~/ola/:
+    ~/.config/nvim:
+      path: nvim/*
+      exclude: [nvim/undodir, nvim/session]
       glob: true
-      path: ola/*
-      exclude: [ ola/nodir/ ]
 
 - create:
   - ~/.config/nvim/undodir

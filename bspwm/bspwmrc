@@ -102,7 +102,7 @@ killall -9 sxhkd #xsettingsd dunst xfce4-power-manager
 #xsettingsd &
 
 # Lauch keybindings daemon
-sxhkd &
+sxhkd -c ~/.config/sxhkd/sxhkdrc_$HOSTNAME &
 
 # Enable Super Keys For Menu
 # ksuperkey -e 'Super_L=Alt_L|F1' &
@@ -122,7 +122,7 @@ bash $HOME/.fehbg
 
 # Start bspwm scripts
 # bspcolors
-# bspcomp
+bspcomp
 bspbar
 bspfloat &
 # /home/bs/scripts/clipboard_rm_dollar/rm_dollar.sh &

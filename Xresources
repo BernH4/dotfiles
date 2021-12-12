@@ -1,3 +1,6 @@
 #include ".Xresources.d/colors"
 #include ".Xresources.d/fonts"
 #include ".Xresources.d/rxvt-unicode"
+
+Xft.dpi: 192
+rofi.dpi: 192
