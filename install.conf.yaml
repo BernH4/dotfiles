@@ -9,6 +9,7 @@
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
+    ~/.zshrc: zshrc
     ~/.bash_logout: bash_logout
     ~/.aliasrc:
     ~/.gitconfig: gitconfig

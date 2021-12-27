@@ -43,13 +43,13 @@ alias r="clear; rspec"
 
 # Arduino
 if [ "$HOSTNAME" = raspberrypi ]; then
-    alias zsub="docker exec -it mosquitto mosquitto_sub -t 'zisterne/#' -v - u bernh4 -P $mqtt_passwd"
-    alias hsub="docker exec -it mosquitto mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
-    alias asub="docker exec -it mosquitto mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+    alias zsub="source ~/.bash_profile && docker exec -it mosquitto mosquitto_sub -t 'zisterne/#' -v - u bernh4 -P $mqtt_passwd"
+    alias hsub="source ~/.bash_profile && docker exec -it mosquitto mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    alias asub="source ~/.bash_profile && docker exec -it mosquitto mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
 else
-    alias zsub="mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
-    alias hsub="mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
-    alias asub="mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+    alias zsub="source ~/.bash_profile && mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
+    alias hsub="source ~/.bash_profile && mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    alias asub="source ~/.bash_profile && mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
 fi
 
 #Platformio

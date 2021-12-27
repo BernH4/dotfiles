@@ -4,3 +4,5 @@
 
 Xft.dpi: 192
 rofi.dpi: 192
+Xcursor.theme: "Pop"
+Xcursor.size: 48
