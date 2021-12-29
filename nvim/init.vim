@@ -16,8 +16,8 @@ fun! StripTrailingWhitespace()
     endif
     %s/\s\+$//e
 endfun
+autocmd FileType markdown,snippets,placeholderx let b:noStripWhitespace=1
 autocmd BufWritePre * call StripTrailingWhitespace()
-autocmd FileType snippets,placeholderx let b:noStripWhitespace=1
 
 " Enable spell checking, s for spell check
 " map <leader>s :setlocal spell! spelllang=en_us<CR>

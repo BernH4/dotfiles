@@ -33,6 +33,7 @@
       path: nvim/*
       exclude: [nvim/undodir, nvim/session]
       glob: true
+    ~/.manual_dotfiles/30-touchpad.conf: 30-touchpad.conf
 
 - create:
   - ~/.config/nvim/undodir
