@@ -59,8 +59,8 @@ super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+# 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -138,10 +138,11 @@ XF86MonBrightnessUp
 ## Mosquitto
 #Stumm Tisch
 ctrl + alt + w
-	mosquitto_pub -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle
+        mosquitto_pub -h 192.168.178.143 -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle -u bernh4 -P arch3
+	# mosquitto_pub -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle
 #Stumm Sofa
 ctrl + alt + s
-	mosquitto_pub -t sxhkd/shelly1-stumm-sofa/relay/0/command -m toggle
+	mosquitto_pub -h 192.168.178.143 -t sxhkd/shelly1-stumm-sofa/relay/0/command -m toggle -u bernh4 -P arch3
 #Stumm Fernseher
 ctrl + alt + f
 	mosquitto_pub -t sxhkd/shellyplug-s-fernseher/0/command  -m toggle
@@ -160,8 +161,8 @@ super + shift + f
 
 
 # Screenshots
-Print
+super + p
     maim ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg
 
-super + Print
+super + ctrl + p
     maim -s ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).jpg

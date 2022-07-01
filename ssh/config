@@ -10,15 +10,20 @@ Host aws
   User ubuntu
   IdentityFile ~/.ssh/mainaws.pem
 
+Host oracle
+  HostName 141.144.224.75
+  User opc
+  IdentityFile ~/.ssh/oracle.key
+
 Host pi
 	HostName 192.168.178.143
 	User pi
-	
+
 Host phone
 	HostName 192.168.178.144
 	User x
 	Port 8022
-	
+
 Host arch
 	HostName 192.168.178.146
 	User bernh4

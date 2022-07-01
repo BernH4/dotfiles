@@ -47,9 +47,12 @@ if [ "$HOSTNAME" = raspberrypi ]; then
     alias hsub="source ~/.bash_profile && docker exec -it mosquitto mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
     alias asub="source ~/.bash_profile && docker exec -it mosquitto mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
 else
-    alias zsub="source ~/.bash_profile && mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
-    alias hsub="source ~/.bash_profile && mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
-    alias asub="source ~/.bash_profile && mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+    # alias zsub="source ~/.bash_profile && mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
+    # alias hsub="source ~/.bash_profile && mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    # alias asub="source ~/.bash_profile && mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
+    alias zsub="mosquitto_sub -t 'zisterne/#' -v -u bernh4 -P $mqtt_passwd"
+    alias hsub="mosquitto_sub -t 'heizung/#' -v -u bernh4 -P $mqtt_passwd"
+    alias asub="mosquitto_sub -t '#' -v -u bernh4 -P $mqtt_passwd"
 fi
 
 #Platformio
@@ -70,9 +73,16 @@ alias fzfp="fzf --preview 'bat --style=numbers --color=always --line-range :500 
 alias sleepon="echo unmasking && sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 alias sleepoff="echo masking && sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 alias dishole="curl -v http://192.168.178.143:81/admin/api.php?disable=300\&auth=$pihole_hash"
+alias rsyncp="rsync -ah --progress"
+alias rsyncpu="rsync -rlth --progress"
+alias mountusb="sudo mount -t vfat  /dev/sda1 /media/usb -o rw,umask=0000"
+alias umountusb="sudo umount /media/usb"
+# alias for browser-sync (with p5.js)
+alias bs='browser-sync start --server --files "*.js, *.html, *.css"'
 
 alias nk="normal_keyboard.sh"
 alias ck="coding_keyboard.sh"
+alias soff="xet dpms force off"
 
 # some more ls aliases
 alias ls='ls --color=auto'

@@ -87,9 +87,12 @@ syntax on
 " set hidden
 set noerrorbells
 "https://stackoverflow.com/questions/36724209/disable-beep-of-linux-bash-on-windows-10
+"ruby
 set visualbell
 set tabstop=2 softtabstop=2
 set shiftwidth=2
+"python
+"set tabstop=8 softtabstop=0 shiftwidth=4
 "Move by shiftwidth ( only indent 2 4 6 .. possible not 5 to 7)
 set shiftround
 set expandtab
@@ -132,8 +135,9 @@ call plug#begin('~/local/share/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'ntk148v/vim-horizon'
 Plug 'habamax/vim-gruvbit'
-Plug 'turbio/bracey.vim'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'neoclide/vim-jsx-improve'
+Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-airline/vim-airline'
@@ -239,6 +243,14 @@ nnoremap <leader>u gg/control 30[0-9][0-9][0-9] 2[0-9][0-9][0-9] <Enter>n:echo '
 iabbr bpry binding.pry
 map <Leader>bp obinding.pry<esc>:w<cr>
 nmap <Leader>pp :<c-u>let pc = (v:count1 ? v:count1 : 1)<cr>:read !tail -<c-r>=pc<cr> ~/.irb_history<cr>:.-<c-r>=pc-1<cr>:norm <c-r>=pc<cr>==<cr>
+
+" python
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+"File formatting
+com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+
+nnoremap = :FormatXML<Cr>
 
 "-----INSERT MODE MAPPINGS -----------
 "correct last misspelled word

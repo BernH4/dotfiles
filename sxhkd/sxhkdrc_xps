@@ -138,13 +138,15 @@ XF86MonBrightnessUp
 ## Mosquitto
 #Stumm Tisch
 ctrl + alt + w
-	mosquitto_pub -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle
+        mosquitto_pub -h 192.168.178.143 -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle -u bernh4 -P arch3
+	# mosquitto_pub -t sxhkd/shelly1-stumm-tisch/relay/0/command -m toggle
 #Stumm Sofa
 ctrl + alt + s
-	mosquitto_pub -t sxhkd/shelly1-stumm-sofa/relay/0/command -m toggle
+	mosquitto_pub -h 192.168.178.143 -t sxhkd/shelly1-stumm-sofa/relay/0/command -m toggle -u bernh4 -P arch3
 #Stumm Fernseher
 ctrl + alt + f
 	mosquitto_pub -t sxhkd/shellyplug-s-fernseher/0/command  -m toggle
+
 
 #
 # rofi
